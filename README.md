@@ -1,1 +1,1 @@
-Saya Galih
+Ini adalah project inventory barang yang menggunakan framework Bootstrap dan di optimasikan dengan template start bootstrap sb-admin 2 berikut source codenya https://startbootstrap.com/template/sb-admin
