@@ -1,4 +1,5 @@
 <?php
+require 'function.php';
 require 'koneksi.php';
 require 'cek.php';
 ?>
@@ -79,7 +80,7 @@ require 'cek.php';
                                 </div>
                                 <form method="POST">
                                 <div class="modal-body">
-                                    <select name="barang" class="form-control">
+                                    <select name="barangmasuk" class="form-control">
                                         <?php
                                         $getdata = mysqli_query($connect, "SELECT * FROM stok");
                                         while($array = mysqli_fetch_array($getdata)){
@@ -92,13 +93,13 @@ require 'cek.php';
                                         ?>
                                     </select>
                                     <br>
-                                    <input type="text" name="deskripsi" placeholder="Deskripsi barang" class="form-control" required>
+                                    <input type="number" name="qty" placeholder="Quantity" class="form-control" required>
                                     <br>
-                                    <input type="number" name="stok" placeholder="Stok Barang" class="form-control" required>
+                                    <input type="text" name="penerima" placeholder="Penerima" class="form-control" required>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" name="add">Tambah</button>
+                                    <button type="submit" class="btn btn-primary" name="addmasuk">Tambah</button>
                                 </div>
                             </form>
                                 </div>

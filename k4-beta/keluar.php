@@ -1,6 +1,7 @@
 <?php
 require 'koneksi.php';
 require 'cek.php';
+require 'function.php';
 ?>
 
 <!DOCTYPE html>
@@ -79,15 +80,26 @@ require 'cek.php';
                                 </div>
                                 <form method="POST">
                                 <div class="modal-body">
-                                    <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+                                    <select name="barangmasuk" class="form-control">
+                                        <?php
+                                        $getdata = mysqli_query($connect, "SELECT * FROM stok");
+                                        while($array = mysqli_fetch_array($getdata)){
+                                            $namabarang = $array['namabarang'];
+                                            $idbarang = $array['idbarang'];
+                                        ?>
+                                        <option value="<?=$idbarang;?>"><?=$namabarang?></option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
                                     <br>
-                                    <input type="text" name="deskripsi" placeholder="Deskripsi barang" class="form-control" required>
+                                    <input type="number" name="qty" placeholder="Quantity" class="form-control" required>
                                     <br>
-                                    <input type="number" name="stok" placeholder="Stok Barang" class="form-control" required>
+                                    <input type="text" name="penerima" placeholder="Penerima" class="form-control" required>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" name="add">Tambah</button>
+                                    <button type="submit" class="btn btn-primary" name="addkeluar">Tambah</button>
                                 </div>
                             </form>
                                 </div>
