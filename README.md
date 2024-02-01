@@ -9,10 +9,10 @@ Langkah langkah Membuat Aplikasi stok barang berbasis web(PHP + MySQL)
 6. Update + delete
 
 DB :
-- Login : iduser, email, password
-- Stok : idbarang, namabarang, deskripsi, stok
-- masuk : idmasuk, idbarang, tanggal, keterangan
-- Keluar : idkeluar, idbarang, tanggal, penerima
+- Login : iduser (INT, PR), email(VARCHAR, 25), password(VARCHAR, 25).
+- Stok : idbarang(INT, PR), namabarang(VARCHAR, 25), deskripsi(VARCHAR, 25), stok(INT).
+- masuk : idmasuk(INT, PR), idbarang(INT), tanggal(TIMESTAMP, CURRENT_TIME), keterangan (VARCHAR, 25), quantity (INT).      
+- Keluar : idkeluar(INT, PR), idbarang(INT), tanggal(TIMESTAMP, CURRENT_TIME), penerima (VARCHAR, 25). quantity (INT).
 
 Inputan user -> mengambil dari inputan -> cek ke database
 -- Jika ada = redirect ke halaman utama
